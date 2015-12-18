@@ -115,28 +115,44 @@ Before:
 
     function abc() {
       var x = 3;
-      // this will make the scoped version of x to be equal to 3 inside the function abc.
+      // this will make the scoped version of x to be equal to 3 
+      // inside the function abc.
     }
 
 After:
 
     const x = 0; // this makes x to be 0 and cannot be changed.
     let y = 1; // this makes y to be 1 and can be changed into another value or type.
+    
+    // Some Errors:
     // const x = 1; after above will make a syntax error
-    // let x = 1; after above will also make a syntax error, you cannot change the re-initialization of a variable in the same scope
-    // let y = 2; after above will also make a syntax error, you cannot re-initialize a variable in the same scope.
-    // x = 1; this will return a syntax error because you can't change the value of a constant variable. Use let instead.
+    // let x = 1; after above will also make a syntax error, 
+    // you cannot change the re-initialization of a variable in the same scope
+    
+    // let y = 2; after above will also make a syntax error, 
+    // you cannot re-initialize a variable in the same scope.
+    
+    // x = 1; this will return a syntax error 
+    // because you can't change the value of a constant variable.
+    // Use let instead.
+    
     // x = "string"; this will also return a syntax error.
 
+    
     function abc() {
       let x = 3; // you can re-initialize a variable in a different scope
     }
 
-    const array = []; // use const on arrays if you are sure the variable will not change type (from array to string or number). 
+    const array = []; 
+    // use const on arrays if you are sure the variable 
+    // will not change type (from array to string or number). 
+    
     array.push(1);
     array.push(2);
     array.pop();
     array.push(3); // these can be done to the array above;
+    
+    // Some Errors
     // array = [1, 2, 3]; This will return a syntax error;
 
 ## functions
@@ -204,6 +220,10 @@ After:
       return a;
     } 
 
-    // add(); will return 0 because a, although a needed parameter, if no a is given will default to a = 0;
-    // add(1, 2, 3) will return 6. Because the rest parameter will make 2 and 3 into [2, 3] parameter.
+    // add(); will return 0. 
+    // Although 'a' needed parameter, 
+    // if no a is given will default to a = 0;
+    
+    // add(1, 2, 3) will return 6.
+    // Because the rest parameter will make 2 and 3 into [2, 3] parameter.
 
