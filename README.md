@@ -109,121 +109,128 @@ And we can know what are implemented in Meteor from here: https://atmospherejs.c
 
 Before:
 
-    var x = 0;
-    var y = 1, z = 'state';
-    var x = 2; // this re-initializes variable x and be equal to 2
+```javascript
+var x = 0;
+var y = 1, z = 'state';
+var x = 2; // this re-initializes variable x and be equal to 2
 
-    function abc() {
-      var x = 3;
-      // this will make the scoped version of x to be equal to 3 
-      // inside the function abc.
-    }
+function abc() {
+  var x = 3;
+  // this will make the scoped version of x to be equal to 3 
+  // inside the function abc.
+}
+```
 
 After:
 
-    const x = 0; // this makes x to be 0 and cannot be changed.
-    let y = 1; // this makes y to be 1 and can be changed into another value or type.
-    
-    // Some Errors:
-    // const x = 1; after above will make a syntax error
-    // let x = 1; after above will also make a syntax error, 
-    // you cannot change the re-initialization of a variable in the same scope
-    
-    // let y = 2; after above will also make a syntax error, 
-    // you cannot re-initialize a variable in the same scope.
-    
-    // x = 1; this will return a syntax error 
-    // because you can't change the value of a constant variable.
-    // Use let instead.
-    
-    // x = "string"; this will also return a syntax error.
+```javascript
+const x = 0; // this makes x to be 0 and cannot be changed.
+let y = 1; // this makes y to be 1 and can be changed into another value or type.
 
-    
-    function abc() {
-      let x = 3; // you can re-initialize a variable in a different scope
-    }
+// Some Errors:
+// const x = 1; after above will make a syntax error
+// let x = 1; after above will also make a syntax error, 
+// you cannot change the re-initialization of a variable in the same scope
 
-    const array = []; 
-    // use const on arrays if you are sure the variable 
-    // will not change type (from array to string or number). 
-    
-    array.push(1);
-    array.push(2);
-    array.pop();
-    array.push(3); // these can be done to the array above;
-    
-    // Some Errors
-    // array = [1, 2, 3]; This will return a syntax error;
+// let y = 2; after above will also make a syntax error, 
+// you cannot re-initialize a variable in the same scope.
+
+// x = 1; this will return a syntax error 
+// because you can't change the value of a constant variable.
+// Use let instead.
+
+// x = "string"; this will also return a syntax error.
+
+
+function abc() {
+  let x = 3; // you can re-initialize a variable in a different scope
+}
+
+const array = []; 
+// use const on arrays if you are sure the variable 
+// will not change type (from array to string or number). 
+
+array.push(1);
+array.push(2);
+array.pop();
+array.push(3); // these can be done to the array above;
+
+// Some Errors
+// array = [1, 2, 3]; This will return a syntax error;
+```
 
 ## functions
 
 Before:
 
-    function abc() {
-      // function here
-    }
+```javascript
+function abc() {
+  // function here
+}
 
-    var xyz = function(a) {
-      // function here
-    }
+var xyz = function(a) {
+  // function here
+}
 
-    function ijk(a, b) {
-      // function here
-    }
+function ijk(a, b) {
+  // function here
+}
 
-    var obj = {
-      fn: function() {
-        // function here
-      }
-    }
+var obj = {
+  fn: function() {
+    // function here
+  }
+}
 
-    setTimeout(function(){
-      // function here
-    }, 500)  
+setTimeout(function(){
+  // function here
+}, 500)  
 
-    someCaller(someParam, function(err, result) {
-      if (err) throw err;
-      else call(result);
-    })
+someCaller(someParam, function(err, result) {
+  if (err) throw err;
+  else call(result);
+})
+```
 
 After:
 
-    const abc = () => {
-      // function here
-    }
+```javascript
+const abc = () => {
+  // function here
+}
 
-    const xyz = a => {
-      // function here
-    }
+const xyz = a => {
+  // function here
+}
 
-    const ijk = (a, b) => {
-      // function here
-    }
+const ijk = (a, b) => {
+  // function here
+}
 
-    const obj = {
-      fn() {
-        // function here
-      }
-    };
+const obj = {
+  fn() {
+    // function here
+  }
+};
 
-    setTimeout(() => {
-      // function here  
-    });
+setTimeout(() => {
+  // function here  
+});
 
-    someCaller(someParam, (err, result) => {
-      if (err) throw err;
-      else call(result);
-    });
+someCaller(someParam, (err, result) => {
+  if (err) throw err;
+  else call(result);
+});
 
-    const add = (a = 0, ...rest) => {
-      rest.forEach(n => a += n);
-      return a;
-    } 
+const add = (a = 0, ...rest) => {
+  rest.forEach(n => a += n);
+  return a;
+} 
 
-    // add(); will return 0. 
-    // Although 'a' needed parameter, 
-    // if no a is given will default to a = 0;
-    
-    // add(1, 2, 3) will return 6.
-    // Because the rest parameter will make 2 and 3 into [2, 3] parameter.
+// add(); will return 0. 
+// Although 'a' needed parameter, 
+// if no a is given will default to a = 0;
 
+// add(1, 2, 3) will return 6.
+// Because the rest parameter will make 2 and 3 into [2, 3] parameter.
+```
