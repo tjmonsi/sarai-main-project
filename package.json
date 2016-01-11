@@ -2,7 +2,6 @@
   "name": "sarai-main-project",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +16,19 @@
   },
   "homepage": "https://github.com/tjmonsi/sarai-main-project",
   "dependencies": {
-    "moment": "^2.10.6"
+    "material-design-lite": "^1.0.6",
+    "moment": "^2.10.6",
+    "react": "^0.14.5",
+    "react-dom": "^0.14.6",
+    "react-redux": "^4.0.6",
+    "redux": "^3.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "react": "^0.14.5",
+    "react-dom": "^0.14.6",
+    "react-redux": "^4.0.6",
+    "redux": "^3.0.5",
+    "redux-devtools": "^3.0.1"
   }
 }

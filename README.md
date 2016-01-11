@@ -103,6 +103,22 @@ The lib folder is the core of the system and is.
   - server : anything that needs to be loaded in the server first
     - test : any test specs for the server files
 
+# Adding Linting in Sublime
+
+Please install jshint, eslint, meteor-eslint and react-eslint using these commands
+
+```
+npm install --save jshint eslint eslint-plugin-meteor eslint-plugin-react
+```
+
+Then install the Sublime packages:
+
+Babel
+ReactJS
+Sass
+SubllimeLinter
+SublimeLinter-contrib-eslint
+
 # ES2015
 
 We are going to use a new version of Javascript called EcmaScript 2015 or ES2015. We need to be familiarized with the new changes on how to write using the new specs for standardized and clean code.
