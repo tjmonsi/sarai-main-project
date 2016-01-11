@@ -3,7 +3,7 @@ import '/node_modules/material-design-lite/material';
 import { default as AppnavMolecule } from '/lib/client/molecule/appnav/appnav-m.jsx';
 import { default as ApptitleMolecule } from '/lib/client/molecule/apptitle/apptitle-m.jsx';
 
-export default class AppheaderOrganism extends React.Component {
+export default class AppdrawerOrganism extends React.Component {
   componentDidMount() {
     componentHandler.upgradeDom();
   }
@@ -12,13 +12,10 @@ export default class AppheaderOrganism extends React.Component {
   }
   render() {
     return (
-      <header className="mdl-layout__header">
-        <div className="mdl-layout__header-row">
-          <ApptitleMolecule />
-          <div className="mdl-layout-spacer"></div>
-          <AppnavMolecule />
-        </div>
-      </header>
+      <div className='mdl-layout__drawer'>
+        <ApptitleMolecule />
+        <AppnavMolecule />
+      </div>
     );
   }
 }

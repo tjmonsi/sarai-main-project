@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.3-modules-beta.2');
+  api.versionsFrom('1.3-modules-beta.4');
 
   var packages = [
     'meteor-base',
@@ -45,7 +45,7 @@ Package.onUse(function(api) {
     'service-configuration@1.0.5',
     // methods that would be part of 1.3,
     'mdg:validated-method@0.2.3',
-    'aldeed:simple-schema@1.5.0'    
+    'aldeed:simple-schema@1.5.0'
   ];
 
   api.use(packages);

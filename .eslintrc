@@ -16,7 +16,7 @@
     "react/jsx-closing-bracket-location": 1,
     "react/jsx-curly-spacing": 1,
     "react/jsx-handler-names": 1,
-    "react/jsx-indent-props": 1,
+    "react/jsx-indent-props": [1, 2],
     "react/jsx-indent": [1, 2],
     "react/jsx-key": 1,
     "react/jsx-max-props-per-line": 1,
@@ -52,21 +52,7 @@
   "globals": {
     /* Internal Globals */
 
-    
+    "componentHandler": true,
     "__meteor_runtime_config__": true,
-    
-    /* Meteor Packges */
-    "FastRender": true,
-    "Picker": true,
-
-    /* Browserify packages */
-    "qs": true,
-    "page": true,
-
-    /* Test env */
-    "describe": true,
-    "context": true,
-    "it": true,
-    "expect": true
   }
 }
