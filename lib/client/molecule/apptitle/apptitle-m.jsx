@@ -10,11 +10,18 @@ export default class ApptitleMolecule extends React.Component {
   }
   render() {
     return (
-      <span className="mdl-layout-title">
-        <a href="/">
+      <a
+        className="mdl-layout-title"
+        href="/"
+      >
+        <span className={this.props.className}>
           {'SARAI Beta'}
-        </a>
-      </span>
+        </span>
+      </a>
     );
   }
 }
+
+ApptitleMolecule.propTypes = {
+  className: React.PropTypes.string.isRequired
+};

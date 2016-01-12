@@ -13,7 +13,7 @@ export default class AppdrawerOrganism extends React.Component {
   render() {
     return (
       <div className='mdl-layout__drawer'>
-        <ApptitleMolecule />
+        <ApptitleMolecule className='drawer-nav-title'/>
         <AppnavMolecule />
       </div>
     );

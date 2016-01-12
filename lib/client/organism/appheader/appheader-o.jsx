@@ -12,9 +12,9 @@ export default class AppheaderOrganism extends React.Component {
   }
   render() {
     return (
-      <header className="mdl-layout__header">
+      <header className="mdl-layout__header sarai-main-header">
         <div className="mdl-layout__header-row">
-          <ApptitleMolecule />
+          <ApptitleMolecule className='header-nav-title'/>
           <div className="mdl-layout-spacer"></div>
           <AppnavMolecule />
         </div>

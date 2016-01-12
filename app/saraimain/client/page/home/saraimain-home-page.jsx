@@ -1,5 +1,6 @@
 import React from 'react';
 import '/node_modules/material-design-lite/material';
+import { default as Landing1Template } from '/lib/client/template/landing1/landing1-t.jsx';
 
 export default class SaraimainHomePage extends React.Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ export default class SaraimainHomePage extends React.Component {
   render() {
     return (
       <div className="saraimain-home-page">
-        {'Hello'}
+        <Landing1Template />
       </div>
     );
   }
