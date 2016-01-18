@@ -40,14 +40,12 @@ The app folder would have several "apps" that are like a simple Meteor app with 
 
 - [app-name]: the name of the app to be installed
   - client : anything that will be loaded in the browser
-    - page : define any main content of the pages in the app
-      - [page-name] : the name of the page
-        - [page-name]-page.jsx : JSX React component file of the page
-        - [page-name]-page.html : page template in HTML
-        - [page-name]-page.js : onCreated, onRendered, helpers, events and Meteor subscriptions (via this.subscribe) of the page.
-        - [page-name]-page.scss : page styles using SASS
-        - [page-name]-route.js : The route specifications of the page.
-        - test : any test specs for the page
+    - actions: any action needed by the app
+      - index.js: exporter or all action module inside the actions folder
+    - configs: any configurations set for this application
+      - context.js: all objects to be put as 'global' variables
+      - routes.js: grouping of routes definition and template-context definition
+    - pages: all routes are defined here
   - lib : same as the lib folder structure below. The only difference is that client-side reusable components are only reusable by the pages inside the app.
   - server : anything that will be loaded in the server that is needed only by the app
     - test : any test specs for the server files
@@ -56,34 +54,27 @@ The lib folder is the core of the system and is.
 
 - lib : anything that needs to be loaded first and on both server and browser
   - client : anything that will be loaded in the browser that needs to be loaded first
-    - atom : any atomic html block that is reusable by all apps
-      - [atom-name] : the name of the atom
-        - [atom-name]-atom.html : atom template in HTML
-        - [atom-name]-atom.js : onCreated, onRendered, helpers, and events of the atom 
-        - [atom-name]-atom.jsx : JSX React component file of the atom
-        - [atom-name]-atom.scss : atom styles using SASS
-        - test : any test specs for the atom
-    - molecule : any molecule block that is reusable by all apps
-      - [molecule-name] : the name of the molecule
-        - [molecule-name]-molecule.html : molecule template in HTML
-        - [molecule-name]-molecule.js : onCreated, onRendered, helpers, and events of the molecule 
-        - [molecule-name]-molecule.jsx : JSX React component of the molecule
-        - [molecule-name]-molecule.scss : molecule styles using SASS
-        - test : any test specs for the molecule
-    - organism : any organism block that is reusable by all apps
-      - [organism-name] : the name of the organism
-        - [organism-name]-organism.html : organism template in HTML
-        - [organism-name]-organism.js : onCreated, onRendered, helpers, and events of the organism 
-        - [organism-name]-organism.jsx : JSX React component of the organism
-        - [organism-name]-organism.scss : organism styles using SASS
-        - test : any test specs for the organism
-    - template : define any template that is only usable in the app
-      - [template-name] : the name of the template
-        - [template-name]-template.html : template template in HTML
-        - [template-name]-template.js : onCreated, onRendered, helpers, and events of the template 
-        - [template-name]-template.jsx : JSX React component of the template. Similar to a layout
-        - [template-name]-template.scss : template styles using SASS
-        - test : any test specs for the template
+    - patterns: all atomic design components are here
+      - atom : any atomic html block that is reusable by all apps
+        - [atom-name] : the name of the atom
+          - [atom-name]-atom.jsx : JSX React component file of the atom
+          - [atom-name]-atom.scss : atom styles using SASS
+          - test : any test specs for the atom
+      - molecule : any molecule block that is reusable by all apps
+        - [molecule-name] : the name of the molecule
+          - [molecule-name]-molecule.jsx : JSX React component of the molecule
+          - [molecule-name]-molecule.scss : molecule styles using SASS
+          - test : any test specs for the molecule
+      - organism : any organism block that is reusable by all apps
+        - [organism-name] : the name of the organism
+          - [organism-name]-organism.jsx : JSX React component of the organism
+          - [organism-name]-organism.scss : organism styles using SASS
+          - test : any test specs for the organism
+      - template : define any template that is only usable in the app
+        - [template-name] : the name of the template
+          - [template-name]-template.jsx : JSX React component of the template. Similar to a layout
+          - [template-name]-template.scss : template styles using SASS
+          - test : any test specs for the template
   - collection : anything data models that is needed by all apps
     - [collection-name] : the name of the collection
       - lib 
