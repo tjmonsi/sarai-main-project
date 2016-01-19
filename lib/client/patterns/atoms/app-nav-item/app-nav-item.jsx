@@ -1,7 +1,7 @@
 import React from 'react';
 import '/node_modules/material-design-lite/material';
 
-class AppBarNavItem extends React.Component {
+class AppNavItem extends React.Component {
   componentDidMount() {
     componentHandler.upgradeDom();
   }
@@ -21,14 +21,14 @@ class AppBarNavItem extends React.Component {
   }
 }
 
-AppBarNavItem.propTypes = {
+AppNavItem.propTypes = {
   link: React.PropTypes.string,
   name: React.PropTypes.string
 };
 
-AppBarNavItem.defaultProps = {
+AppNavItem.defaultProps = {
   link: '/',
   name: 'Link'
 };
 
-export default AppBarNavItem;
+export default AppNavItem;

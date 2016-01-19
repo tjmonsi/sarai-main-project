@@ -1,10 +1,9 @@
 import React from 'react';
 import '/node_modules/material-design-lite/material';
-
-import { default as AppBarDropdown } from '/lib/client/patterns/atoms/app-bar-dropdown/app-bar-dropdown.jsx';
 import { default as AppNavItem } from '/lib/client/patterns/atoms/app-nav-item/app-nav-item.jsx';
+import { default as AppDrawerGroup } from '/lib/client/patterns/atoms/app-drawer-group/app-drawer-group.jsx';
 
-class AppBarNav extends React.Component {
+class AppDrawerNav extends React.Component {
   componentDidMount() {
     componentHandler.upgradeDom();
   }
@@ -22,10 +21,10 @@ class AppBarNav extends React.Component {
       );
     });
   }
-  renderDropdowns() {
+  renderGroup() {
     return this.props.dropdownList.map((dropdown, key) => {
       return (
-        <AppBarDropdown
+        <AppDrawerGroup
           id = {dropdown.id}
           key = {key}
           list = {dropdown.list}
@@ -36,15 +35,15 @@ class AppBarNav extends React.Component {
   }
   render() {
     return (
-      <nav className="mdl-navigation mdl-layout--large-screen-only">
-        {this.renderDropdowns()}
+      <div className="mdl-navigation">
         {this.renderLinks()}
-      </nav>
+        {this.renderGroup()}
+      </div>
     );
   }
 }
 
-AppBarNav.propTypes = {
+AppDrawerNav.propTypes = {
   dropdownList: React.PropTypes.arrayOf(React.PropTypes.shape({
     id: React.PropTypes.string,
     list: React.PropTypes.arrayOf(React.PropTypes.shape({
@@ -59,7 +58,7 @@ AppBarNav.propTypes = {
   }))
 };
 
-AppBarNav.defaultProps = {
+AppDrawerNav.defaultProps = {
   dropdownList: [
     {
       id: 'dropdown-a',
@@ -106,4 +105,4 @@ AppBarNav.defaultProps = {
   ]
 };
 
-export default AppBarNav;
+export default AppDrawerNav;

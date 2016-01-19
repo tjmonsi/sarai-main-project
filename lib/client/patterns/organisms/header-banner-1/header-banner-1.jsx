@@ -12,7 +12,10 @@ class HeaderBanner1 extends React.Component {
   }
   render() {
     const style = {
-      backgroundImage: `url(${this.props.bannerBackgroundImage})`
+      backgroundImage: `url(${this.props.bannerBackgroundImage})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center top'
     };
 
     const {bannerDescription, bannerTitle, bannerAlert} = this.props;
@@ -22,7 +25,7 @@ class HeaderBanner1 extends React.Component {
         className = "mdl-grid header-banner-1"
         style = {style}
       >
-        <div className = "mdl-cell mdl-cell--6-col mdl-cell--middle mdl-cell--12-col-phone">
+        <div className = "mdl-cell mdl-cell--6-col mdl-cell--middle mdl-cell--12-col-phone header-banner-1-title-text-container">
           <HeaderBannerTitleText
             description = {bannerDescription}
             title = {bannerTitle}

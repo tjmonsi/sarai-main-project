@@ -11,7 +11,7 @@ export default (Router = FlowRouter, TemplateCtx) => {
       mount(TemplateCtx, {
         content() {
           return (
-            <HeaderBanner1 />
+            <HeaderBanner1 bannerBackgroundImage="/images/spiel_background2-min.jpg"/>
           );
         }
       });
