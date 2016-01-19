@@ -1,6 +1,8 @@
+@import '{}/lib/client/themes/color';
+
 .header-banner-1 {
   background-size: 'cover';
   background-repeat: 'no-repeat';
   background-position: 'center center';
-  color: #ffffff;
+  color: $color-primary-text-light;
 }
