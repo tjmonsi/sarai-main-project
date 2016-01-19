@@ -1,6 +1,7 @@
 import React from 'react';
 import '/node_modules/material-design-lite/material';
 import { default as HeaderBannerTitleText } from '/lib/client/patterns/molecules/header-banner-title-text/header-banner-title-text.jsx';
+import { default as HeaderBannerAlert } from '/lib/client/patterns/molecules/header-banner-alert/header-banner-alert.jsx';
 
 class HeaderBanner1 extends React.Component {
   componentDidMount() {
@@ -11,24 +12,24 @@ class HeaderBanner1 extends React.Component {
   }
   render() {
     const style = {
-      backgroundImage: `url(${this.props.bannerBackgroundImage})`,
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center center'
+      backgroundImage: `url(${this.props.bannerBackgroundImage})`
     };
+
+    const {bannerDescription, bannerTitle, bannerAlert} = this.props;
 
     return (
       <div
         className = "mdl-grid header-banner-1"
         style = {style}
       >
-        <div className = "mdl-cell mdl-cell--6-col mdl-cell--12-col-phone">
+        <div className = "mdl-cell mdl-cell--6-col mdl-cell--middle mdl-cell--12-col-phone">
           <HeaderBannerTitleText
-            description = {this.props.bannerDescription}
-            title = {this.props.bannerTitle}
+            description = {bannerDescription}
+            title = {bannerTitle}
           />
         </div>
-        <div className = "mdl-cell mdl-cell--6-col mdl-cell--12-col-phone">
+        <div className = "mdl-cell mdl-cell--6-col mdl-cell--top mdl-cell--12-col-phone">
+          {bannerAlert()}
         </div>
       </div>
     );
@@ -36,12 +37,16 @@ class HeaderBanner1 extends React.Component {
 }
 
 HeaderBanner1.propTypes = {
+  bannerAlert: React.PropTypes.func,
   bannerBackgroundImage: React.PropTypes.string,
   bannerDescription: React.PropTypes.string,
   bannerTitle: React.PropTypes.string
 };
 
 HeaderBanner1.defaultProps = {
+  bannerAlert() {
+    return (<HeaderBannerAlert />);
+  },
   bannerBackgroundImage: '/atomic-design/fpo_16x9.png'
 };
 

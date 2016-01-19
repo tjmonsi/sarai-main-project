@@ -11,7 +11,7 @@ class OnePageView extends React.Component {
   render() {
     const { content } = this.props;
     return (
-      <div className="">
+      <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         {content()}
       </div>
     );

@@ -1,0 +1,8 @@
+@import '{}/lib/client/themes/color';
+
+.app-bar-dropdown {
+  .app-bar-dropdown-link {
+    text-decoration: none;
+    color: $app-bar-dropdown-link;
+  }
+}

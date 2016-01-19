@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/tjmonsi/sarai-main-project",
   "dependencies": {
+    "classnames": "^2.2.3",
     "material-design-lite": "^1.0.6",
     "moment": "^2.10.6",
     "react": "^0.14.5",
